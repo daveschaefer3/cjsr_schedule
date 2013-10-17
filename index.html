@@ -2,10 +2,17 @@
 <head>
   <meta charset="UTF-8">
   <title>CJSR Program Schedule</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet/less" type="text/css" href="schedule.less?ts=<?=filemtime('schedule.less')?>" />
+  <!-- <link rel="stylesheet/less" type="text/css" href="css/schedule.less" /> -->
 
   <script type="text/javascript" src="javascripts/lib/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="javascripts/lib/handlebars-1.0.0.js"></script>
   <script type="text/javascript" src="javascripts/lib/json2.js"></script>
+  <script type="text/javascript" src="javascripts/lib/underscore-1.5.2/underscore-1.5.2.js"></script>
+  <script type="text/javascript" src="javascripts/lib/backbone-1.0.0/backbone-1.0.0-min.js"></script>
+
 
   <script type="text/javascript" src="javascripts/showJson.js"></script>
   <script type="text/javascript" src="javascripts/templateHelpers.js"></script>
@@ -14,70 +21,135 @@
 
     Handlebars.registerHelper("");
   </script>
-
-  <script type="text/javascript">
-    // template filling
-    
-    $(function(){
-      // 
-      // $('#days-box').append(JSON.stringify(showJson));
-
-      var shows = showJson.shows;
-      var dayList = [
-        {theDay: "mon"},
-        {theDay: "tues"},
-        {theDay: "wed"},
-        {theDay: "thurs"},
-        {theDay: "fri"},
-        {theDay: "sat"},
-        {theDay: "sun"}
-      ];
-
-      var daySource = $('#day-template').html();
-      var showSource = $('#show-template').html();
-
-      for (var i=0; i < dayList.length; i++) {
-        var dayTemplate = Handlebars.compile(daySource);
-        var dayHtml = dayTemplate(dayList[i]);
-        $('#days-box').append(dayHtml);
-      };
-
-      for (var n=0; n < shows.length; n++) {
-        var show = shows[n];
-        var columnDump = "#" + show.day;
-
-        var showTemplate = Handlebars.compile(showSource);
-        var showHtml = showTemplate(show);
-        $(columnDump).append(showHtml);
-      };
-
-    });
-  </script>
+  <script type="text/javascript" src="javascripts/lib/less-1.4.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/schedule.js"></script>
 </head>
 <body>
-<div id="container">
-  <div class="timestrip" id="left-times"></div>
-  <div id="days-box">
 
+<div id="featureModal" class="modal fade">
+  <div id="featureWrap" class="modal-dialog">
+    <div id="featureTarget" class="modal-content"></div>
+
+    <div class="clearFix"></div>
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+<div class="clearFix"></div>
+
+<div id="contentContainer">
+  <div id="titleBox">
+    <h1>CJSR 88.5 FM - Program Schedule</h1>
   </div>
-  <div class="timestrip" id="right-times"></div>
+  <div id="messageBox">
+    <div id="message">
+      <p>Click on any of the shows below to see more information.</p>
+    </div>
+    <span class="clearFix"></span>
+  </div>
+
+  <div id="headerRow">
+    <div class="timeHeader"></div>
+    <div id="dayHeaders"></div>
+    <div class="timeHeader"></div>
+    <span class="clearFix"></span>
+  </div><!-- / #headerRow -->
+
+  <div id="contentRow">
+    <div id="left-times">
+      <div class="timestrip"></div>
+    </div>
+    
+    <div id="days-box">
+
+    </div>
+
+    <div id="right-times">
+      <div class="timestrip"></div>
+    </div>
+
+    <span class="clearFix"></span>
+  </div><!-- / #contentRow -->
+
+  <div id="footer">
+    Footer
+  </div>
+
+  
 </div>
 
 
+
 <!-- TEMPLATES START -->
+<script id="header-template" type="text/x-handlebars-template">
+    <div class="dayHeader">
+      <strong>{{fullDay}}</strong>
+    </div>
+</script>
+
 <script id="day-template" type="text/x-handlebars-template">
-  <div class="day" id="{{theDay}}">
-    Column.
-  </div><br/>
+  <div id="{{theDay}}Column" class="day">
+    <div class="showColumn" id="{{theDay}}">
+
+    </div>
+  </div>
+</script>
+
+<script id="early-template" type="text/x-handlebars-template">
+  <div id="{{theDay}}Early">
+    
+  </div>
 </script>
 
 <script id="show-template" type="text/x-handlebars-template">
-  <div class="show" id="show-{{id}}">
-    <span>{{{name}}}</span>
+  <span class="show start-{{start}}" id="{{day}}-{{daysId}}" data-toggle="modal" data-target="#featureModal">
+    <span>
+      {{{name}}}
+    </span>
+  </span>
+</script>
+
+<script id="feature-template" type="text/x-handlebars-template">
+  <div class="featureHead modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+    <h3 class="featName">
+      {{{name}}}
+    </h3>
+    <p>
+      {{tagline}}
+    </p>  
+  </div>
+  <div class="modal-body">
+    <div class="feature" id="feature-{{day}}-{{daysId}}">
+      <span class="featDay" id="featDay-{{day}}">
+        <p><strong>{{fullDay}}</strong></p>
+      </span>
+      <p class="featTimes">{{timeString}}</p>
+      <p class="description">
+        {{description}}
+      </p>
+      {{#if email}}
+        <span class="featEmail">
+          <strong>Email: </strong>{{email}}
+        </span><br/>
+      {{/if}}
+      {{#if website}}
+        <span class="featSite">
+          <a href="{{website}}" target="_blank">
+            Website
+          </a>
+        </span><br/>
+      {{/if}}
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button id="prev-{{day}}-{{daysId}}" type="button" class="btn btn-default pull-left nextPrevious"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Previous Show</button>
+    <button id="next-{{day}}-{{daysId}}" type="button" class="btn btn-default nextPrevious">Next Show&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></button>
   </div>
 </script>
 
 <!-- TEMPLATES END -->
+
+<script type="text/javascript" src="javascripts/lib/bootstrap.min.js"></script>
 
 </body>
 </html>
