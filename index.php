@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>CJSR Program Schedule</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link href="http://cjsrfm88.blogspot.ca/favicon.ico" rel="icon" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
