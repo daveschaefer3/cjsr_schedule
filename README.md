@@ -1,7 +1,7 @@
 CJSR Schedule
 =============
 
-An online schedule application for CJSR 88.5FM, Edmonton's first campus-community radio station.
+An online schedule application for CJSR 88.5FM, Alberta, Canada's first campus radio station.
 
 This schedule is created within the browser using JavaScript every time the page is visited.
 All of the show data is currently kept in a flat file (showJson.js) in JSON notation.
