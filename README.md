@@ -3,16 +3,18 @@ CJSR Schedule
 
 An online schedule for CJSR 88.5FM, Alberta, Canada's first campus radio station.
 
-This schedule is created within the browser using JavaScript every time the page is visited.
-All of the show data is currently kept in a flat file (showJson.js) in JSON notation.
-This data is processed by schedule.js and Handlebars string templates located in index.php are filled.
-These string templates are styled using Less (a dynamic stylesheet language.)
+This schedule is generated within the browser every time the page is visited.
+All show data is currently kept in a flat file (showJson.js) in JSON notation.
+This data is processed by schedule.js and is used to fill Handlebars.js string templates, located in index.php.
+These string templates are styled using Less, a dynamic stylesheet language, and Twitter Bootstrap.
 
+Click on any show to see more information about a show.
 
 Future features will hopefully include:
-  - an improved responsive design for mobile and widescreen browsers
-  - a re-organization of the codebase using Backbone.js
+  - a responsive design for mobile and widescreen browsers
+  - a re-organization of the codebase using Backbone.js or some other framework
   - a back-end for administration (CRUD functions) using MongoDB and node.js
   - pre-processing of LESS stylesheets using node.js (support for Internet Explorer)
+  - various tooltips and widgets (what's on now, genre legend), twitter integration/handles
 
 Please get in touch if you would like to help with this project or if you find any problems with the schedule!
