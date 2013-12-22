@@ -9,8 +9,10 @@ This data is processed by schedule.js and Handlebars string templates located in
 These string templates are styled using Less (a dynamic stylesheet language.)
 
 
-Future features include:
+Future features will hopefully include:
   - an improved responsive design for mobile and widescreen browsers
   - a re-organization of the codebase using Backbone.js
   - a back-end for administration (CRUD functions) using MongoDB and node.js
   - pre-processing of LESS stylesheets using node.js (support for Internet Explorer)
+
+Please get in touch if you would like to help with this project or if you find any problems with the schedule!
