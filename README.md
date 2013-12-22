@@ -1,16 +1,16 @@
-cjsr_schedule
+CJSR Schedule
 =============
 
-Online schedule for CJSR 88.5FM, Edmonton's campus-community radio station.
+Online schedule application for CJSR 88.5FM, Edmonton's first campus-community radio station.
 
-This CJSR Program Schedule is created within the browser using JavaScript.
-
-All of the show data is currently kept in a flat file (javascripts/showJson.js) in JavaScript Object Notation (JSON).
-
-The show data is processed by javascripts/schedule.js and the data is filled into Handlebars.js templates located in index.php.
+This schedule is created within the browser using JavaScript every time the page is visited.
+All of the show data is currently kept in a flat file (showJson.js) in JSON notation.
+This data is processed by schedule.js and Handlebars string templates located in index.php are filled.
+These string templates are styled using Less (a dynamic stylesheet language.)
 
 
 Future features include:
-  - a back-end for administration (CRUD functions)
   - an improved responsive design for mobile and widescreen browsers
   - a re-organization of the codebase using Backbone.js
+  - a back-end for administration (CRUD functions)
+  - pre-processing of LESS stylesheets using node.js (support for Internet Explorer)
