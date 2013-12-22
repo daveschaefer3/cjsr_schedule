@@ -12,5 +12,5 @@ These string templates are styled using Less (a dynamic stylesheet language.)
 Future features include:
   - an improved responsive design for mobile and widescreen browsers
   - a re-organization of the codebase using Backbone.js
-  - a back-end for administration (CRUD functions)
+  - a back-end for administration (CRUD functions) using MongoDB and node.js
   - pre-processing of LESS stylesheets using node.js (support for Internet Explorer)
