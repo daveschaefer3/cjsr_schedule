@@ -162,19 +162,24 @@
     <div class="feature" id="feature-{{day}}-{{daysId}}">
       <p><strong><span class="featDay" id="featDay-{{day}}">{{fullDay}}</span> - <span class="featTimes">{{timeString}}</span></strong></p>
       <p class="description">{{{description}}}</p>
-      <p>{{{genre}}}</p>
       
       {{#if email}}
-        <span class="featEmail"><strong>Email: </strong>{{email}}</span><br/>
+        <span class="featEmail">Email: {{email}}</span><br/>
       {{/if}}
 
       {{#if twitter}}
-        <span class="featTwitter"><strong>Twitter: </strong><a target="_blank" href="https://twitter.com/{{twitter}}">@{{twitter}}</span><br/>
+        <span class="featTwitter">Twitter: <a target="_blank" href="https://twitter.com/{{twitter}}">@{{twitter}}</a></span><br/>
+      {{/if}}
+
+      {{#if soundcloud}}
+        <span class="featSoundcloud"><a target="_blank" href="{{soundcloud}}">SoundCloud</a></span><br/>
       {{/if}}
 
       {{#if website}}
         <span class="featSite"><a href="{{website}}" target="_blank">Website</a></span><br/>
       {{/if}}
+
+      <br/><p>{{{genre}}}</p>
     </div>
 
     <div id="next-{{day}}-{{daysId}}" class="nextFeat nextPrevious pull-right"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;&nbsp;</div>

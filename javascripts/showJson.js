@@ -322,6 +322,7 @@ var showJson = {
       "description": "",
       "email": "",
       "twitter": "MRsoulofthecity",
+      "soundcloud": "https://soundcloud.com/cjsrfm/sets/soul-of-the-city",
       "website": false,
       "genre": "Eclectic",
       "colour": "eclectic"
@@ -1481,7 +1482,7 @@ var showJson = {
       "day": "tues",
       "start": 100,
       "end": 300,
-      "tagline": "Do what you want",
+      "tagline": "Do what you want to",
       "hosts": "",
       "description": "",
       "email": "",
