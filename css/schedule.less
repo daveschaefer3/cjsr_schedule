@@ -333,11 +333,11 @@ span#bbcBanner {
 div#footer {
   display: block;
   .column;
-  height: @footerHeight;
+  min-height: @footerHeight;
   width: 960px;
   margin: 0 auto;
   text-align: center;
-  line-height: @footerHeight;
+  margin-top: 20px;
 }
 
 
@@ -371,6 +371,10 @@ div.nextFeat {
   width: 60px;
   text-align: right;
   cursor: pointer;
+}
+.featureHead {
+
+  padding-left: 60px;
 }
 div.feature {
   .column;

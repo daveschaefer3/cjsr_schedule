@@ -43,7 +43,7 @@
 
 <div id="contentContainer">
   <div id="pageBanner">
-    <img class="background" src="images/back_etc.png" alt="background">
+    <a target="_blank" href="http://cjsr.com/"><img class="background" src="images/back_etc.png" alt="background"></a>
   </div>
 <!-- 
   <div id="bannerHeight"></div> -->
@@ -87,7 +87,12 @@
 
     <span class="clearFix"></span>
     <div id="footer">
-      <p>If you have any questions or conerns regarding the schedule please contact Dave Schaefer at <a href="mailto:daveschaefer3@gmail.com?subject=CJSR%20Program%20Schedule">daveschaefer3@gmail.com</a></p>
+      <p>
+        Banner image designed by <a target="_blank" href="http://mountpioneer.com/">Mount Pioneer</a><br/>
+        Schedule developed by <a target="_blank" href="http://notsubliminal.com">Not Subliminal</a> &nbsp;|&nbsp; 
+        <a target="_blank" href="https://github.com/daveschaefer3/cjsr_schedule">{ Fork this project on GitHub }</a><br/>
+        &copy; 2013 - 2014 First Alberta Campus Radio Association &nbsp;|&nbsp; <a target="_blank" href="http://cjsr.com/">CJSR.COM</a>
+      </p>
     </div>
     <span class="clearFix"></span>
     
@@ -148,44 +153,23 @@
 <script id="feature-template" type="text/x-handlebars-template">
   <div class="featureHead modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-
-    <h3 class="featName">
-      {{{name}}}
-    </h3>
-    <p>
-      {{tagline}}
-    </p>  
+    <h3 class="featName">{{{name}}}</h3>
+    <p>{{tagline}}</p>  
   </div>
+
   <div id="feature-modal-body" class="modal-body">
-
     <div id="prev-{{day}}-{{daysId}}" class="previousFeat nextPrevious"><span class="glyphicon glyphicon-chevron-left"></span></div>
-
     <div class="feature" id="feature-{{day}}-{{daysId}}">
-      <p>
-        <strong>
-          <span class="featDay" id="featDay-{{day}}">
-            {{fullDay}}
-          </span> - 
-          <span class="featTimes">{{timeString}}</span>
-        </strong>
-      </p>
-      <p class="description">
-        {{{description}}}
-      </p>
-      <p>
-        {{{genre}}}
-      </p>
+      <p><strong><span class="featDay" id="featDay-{{day}}">{{fullDay}}</span> - <span class="featTimes">{{timeString}}</span></strong></p>
+      <p class="description">{{{description}}}</p>
+      <p>{{{genre}}}</p>
+      
       {{#if email}}
-        <span class="featEmail">
-          <strong>Email: </strong>{{email}}
-        </span><br/>
+        <span class="featEmail"><strong>Email: </strong>{{email}}</span><br/>
       {{/if}}
+
       {{#if website}}
-        <span class="featSite">
-          <a href="{{website}}" target="_blank">
-            Website
-          </a>
-        </span><br/>
+        <span class="featSite"><a href="{{website}}" target="_blank">Website</a></span><br/>
       {{/if}}
     </div>
 
