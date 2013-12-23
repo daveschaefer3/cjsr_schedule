@@ -1523,19 +1523,19 @@ var showJson = {
     },
     {
       "id": 106,
-      "name": "OPEN SLOT",
+      "name": "Global Warning",
       "day": "mon",
       "start": 100,
       "end": 300,
-      "tagline": "Do what you want to",
+      "tagline": "It's not what you think",
       "hosts": "",
       "description": "",
       "email": "",
       "twitter": "",
       "facebook": "",
       "website": "",
-      "genre": "N/A",
-      "colour": "open"
+      "genre": "Heavy Metal",
+      "colour": "loud"
     },
     {
       "id": 107,
