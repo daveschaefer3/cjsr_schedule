@@ -168,6 +168,10 @@
         <span class="featEmail"><strong>Email: </strong>{{email}}</span><br/>
       {{/if}}
 
+      {{#if twitter}}
+        <span class="featTwitter"><strong>Twitter: </strong><a target="_blank" href="https://twitter.com/{{twitter}}">@{{twitter}}</span><br/>
+      {{/if}}
+
       {{#if website}}
         <span class="featSite"><a href="{{website}}" target="_blank">Website</a></span><br/>
       {{/if}}
