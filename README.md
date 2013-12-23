@@ -17,4 +17,4 @@ Future features will hopefully include:
   - pre-processing of LESS stylesheets using node.js (support for Internet Explorer)
   - various tooltips and widgets (what's on now, genre legend), twitter integration/handles
 
-Please get in touch if you would like to help with this project or if you find any problems with the schedule!
+Please get in touch if you see any problems and would like to help!
