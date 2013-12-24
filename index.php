@@ -89,7 +89,7 @@
     <div id="footer">
       <p>
         Banner image designed by <a target="_blank" href="http://mountpioneer.com/">Mount Pioneer</a><br/>
-        Schedule developed by <a target="_blank" href="http://notsubliminal.com">Not Subliminal</a> &nbsp;|&nbsp; 
+        Schedule designed and developed by <a target="_blank" href="http://notsubliminal.com">Not Subliminal</a> &nbsp;|&nbsp; 
         <a target="_blank" href="https://github.com/daveschaefer3/cjsr_schedule">{ Fork this project on GitHub }</a><br/>
         &copy; 2013 - 2014 First Alberta Campus Radio Association &nbsp;|&nbsp; <a target="_blank" href="http://cjsr.com/">CJSR.COM</a>
       </p>
