@@ -5,29 +5,45 @@
   <title>CJSR Program Schedule</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="http://cjsrfm88.blogspot.ca/favicon.ico" rel="icon" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/bootstrap.min.css" media="screen">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="javascripts/lib/html5shiv.js"></script>
     <script src="javascripts/lib/respond.min.js"></script>
   <![endif]-->
   
-  <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/cjsr_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" />
+  <link rel="stylesheet/less" type="text/css" href="styles/schedule.less" />
 
-  <script type="text/javascript" src="javascripts/lib/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="javascripts/lib/handlebars-1.0.0.js"></script>
-  <script type="text/javascript" src="javascripts/lib/json2.js"></script>
-  <!-- <script type="text/javascript" src="javascripts/lib/underscore-1.5.2/underscore-1.5.2.js"></script>
-  <script type="text/javascript" src="javascripts/lib/backbone-1.0.0/backbone-1.0.0-min.js"></script> -->
-  <script type="text/javascript" src="javascripts/lib/less-1.4.1.min.js"></script>
+  <script type="text/javascript" src="scripts/lib/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="scripts/lib/handlebars-1.0.0.js"></script>
+  <script type="text/javascript" src="scripts/lib/json2.js"></script>
+  <script type="text/javascript" src="scripts/lib/underscore-1.5.2/underscore-1.5.2.js"></script>
+  <script type="text/javascript" src="scripts/lib/backbone-1.0.0/backbone-1.0.0-min.js"></script>
+  <script type="text/javascript" src="scripts/lib/less-1.4.1.min.js"></script>
+
+  <script type="text/javascript" src="scripts/views/show.js"></script>
+  <script type="text/javascript" src="scripts/models/show.js"></script>
+  <script type="text/javascript" src="scripts/models/day.js"></script>
+  <script type="text/javascript" src="scripts/models/legendItem.js"></script>
+
+  <script type="text/javascript" src="scripts/collections/daySchedule.js"></script>
+  <script type="text/javascript" src="scripts/collections/weekSchedule.js"></script>
+  <script type="text/javascript" src="scripts/collections/legend.js"></script>
+  
+  <script type="text/javascript" src="scripts/views/show.js"></script>
+  <script type="text/javascript" src="scripts/views/daySchedule.js"></script>
+  <script type="text/javascript" src="scripts/views/weekSchedule.js"></script>
+  <script type="text/javascript" src="scripts/views/legendItem.js"></script>
+  <script type="text/javascript" src="scripts/views/legend.js"></script>
+
 <script type="text/javascript">
     // custom Handlebars template helpers
 
     Handlebars.registerHelper("");
   </script>
-  <script type="text/javascript" src="javascripts/showJson.js"></script>
-  <script type="text/javascript" src="javascripts/schedule.js"></script>
+  <script type="text/javascript" src="scripts/showJson.js"></script>
+  <script type="text/javascript" src="scripts/schedule.js"></script>
 
 </head>
 <body>
@@ -189,7 +205,11 @@
 
 <!-- TEMPLATES END -->
 
-<script type="text/javascript" src="javascripts/lib/bootstrap.min.js"></script>
+<!-- build:js scripts/main.js -->
+<script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+<!-- endbuild -->
+
+<script type="text/javascript" src="scripts/lib/bootstrap.min.js"></script>
 
 </body>
 </html>
