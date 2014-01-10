@@ -13,21 +13,23 @@
     <script src="javascripts/lib/respond.min.js"></script>
   <![endif]-->
   
-  <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/cjsr_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" />
+  <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/test_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" />
+  <script type="text/javascript">less = { env: 'development' };</script>
 
-  <script type="text/javascript" src="javascripts/lib/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="javascripts/lib/handlebars-1.0.0.js"></script>
-  <script type="text/javascript" src="javascripts/lib/json2.js"></script>
+
+  <script type="text/javascript" src="javascripts/lib/jquery-1.10.2.min.js?ts=<?=filemtime('javascripts/lib/jquery-1.10.2.min.js')?>"></script>
+  <script type="text/javascript" src="javascripts/lib/handlebars-1.0.0.js?ts=<?=filemtime('javascripts/lib/handlebars-1.0.0.js')?>"></script>
+  <script type="text/javascript" src="javascripts/lib/json2.js?ts=<?=filemtime('javascripts/lib/json2.js')?>"></script>
   <!-- <script type="text/javascript" src="javascripts/lib/underscore-1.5.2/underscore-1.5.2.js"></script>
   <script type="text/javascript" src="javascripts/lib/backbone-1.0.0/backbone-1.0.0-min.js"></script> -->
-  <script type="text/javascript" src="javascripts/lib/less-1.4.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/lib/less-1.4.1.min.js?ts=<?=filemtime('javascripts/lib/less-1.4.1.min.js')?>"></script>
 <script type="text/javascript">
     // custom Handlebars template helpers
 
     Handlebars.registerHelper("");
   </script>
-  <script type="text/javascript" src="javascripts/showJson.js"></script>
-  <script type="text/javascript" src="javascripts/schedule.js"></script>
+  <script type="text/javascript" src="javascripts/showJson.js?ts=<?=filemtime('javascripts/showJson.js')?>"></script>
+  <script type="text/javascript" src="javascripts/schedule.js?ts=<?=filemtime('javascripts/schedule.js')?>"></script>
 
 </head>
 <body>
@@ -85,7 +87,10 @@
     <span class="clearFix"></span>
     <!-- <div id="scheduleBuffer"></div> -->
 
-    <span class="clearFix"></span>
+    <div class="clearFix"></div>
+    
+    <div id="legendContainer"></div>
+
     <div id="footer">
       <p>
         Banner image designed by <a target="_blank" href="http://mountpioneer.com/">Mount Pioneer</a><br/>
@@ -95,7 +100,6 @@
       </p>
     </div>
     <span class="clearFix"></span>
-    
   </div><!-- / #scheduleBox -->
   
   
@@ -124,17 +128,6 @@
   <div id="{{theDay}}Early">
     
   </div>
-</script>
-
-<script id="legend-template" type="text/x-handlebars-template">
-  <div class="scheduleLegend">
-    <span id="genre-{{colour}}" class="legendGenre">
-      <span id="{{colour}}Color" class="legendSwatch {{colour}}" data-content="{{description}}">
-        <p class="legendLabel">{{label}}</p>
-      </span>
-      <!-- <span class="legendDescription">{{description}}</span> -->
-    </span>
-  </div><span class="clearFix"></span>
 </script>
 
 <script id="show-template" type="text/x-handlebars-template">
@@ -185,6 +178,19 @@
     <div id="next-{{day}}-{{daysId}}" class="nextFeat nextPrevious pull-right"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;&nbsp;</div>
     <div class="clearFix"></div>
   </div> 
+</script>
+
+<script id="legend-template" type="text/x-handlebars-template">
+  <div class="scheduleLegend">
+    <span id="genre-{{colour}}" class="legendGenre">
+      <span id="{{colour}}Color" class="legendSwatch {{colour}}">
+        <p class="legendLabel">{{label}}</p>
+      </span>
+      <span id="{{colour}}Color" class="legendDescBackground {{colour}}">
+        <p class="legendDescription">{{description}}</p> 
+      </span>
+    </span>
+  </div><div class="clearFix"></div>
 </script>
 
 <!-- TEMPLATES END -->

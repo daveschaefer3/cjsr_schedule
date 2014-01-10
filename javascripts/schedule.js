@@ -41,7 +41,7 @@ $(function(){
   var headerSource = $('#header-template').html();
   var daySource = $('#day-template').html();
   var showSource = $('#show-template').html();
-  var clearSource = '<span class="clearFix"></span>';
+  var clearSource = '<div class="clearFix"></div>';
   var featureSource = $('#feature-template').html();
   var earlySource = $('#early-template').html();
   var bbcSource = $('#bbc-template').html();
@@ -85,7 +85,7 @@ $(function(){
   var templateLegend = function(colour) {
     var legendTemplate = Handlebars.compile(legendSource);
     var legendHtml = legendTemplate(colour);
-    $('#legendContainer').append(legendHtml);
+    $('#legendSwatches').append(legendHtml);
   };
 
 
@@ -367,16 +367,21 @@ $(function(){
 
   // template legend
   $('#scheduleBox').append(clearSource);
-  $('#scheduleBox').append('<span class="clearFix"></span><div id="legendContainer"><h3>Legend</h3></div>');
+  //$('#scheduleBox').append('<span class="clearFix"></span><div id="legendContainer"><h3>Legend</h3></div><span class="clearFix">');
+  $('#legendContainer').append('<h3>Legend</h3>');
+  $('#legendContainer').append('<div id="legendSwatches"></div><div class="clearFix"></div>');
 
   for (var i = 0, len = colours.length; i < len; i++) {
     console.log(colours[i].colour);
     templateLegend(colours[i]);
   };
-  $('.legendSwatch').popover({
-    placement: 'right',
-    trigger: 'hover'
-  });
+
+
+
+  // $('.legendSwatch').popover({
+  //   placement: 'right',
+  //   trigger: 'hover'
+  // });
 
   eventListeners();
 

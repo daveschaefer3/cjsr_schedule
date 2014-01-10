@@ -334,17 +334,6 @@ span#bbcBanner {
   z-index: 10;
 }
 
-div#footer {
-  display: block;
-  .column;
-  min-height: @footerHeight;
-  width: 960px;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px;
-}
-
-
 /* FEATURE MODAL */
 div#featMoveBack {
   .column;
@@ -355,7 +344,6 @@ div#featMoveForward {
   position: relative;
 }
 div#featureWrap {
-
   width: 700px;
 }
 div#featureWrapChild {
@@ -390,33 +378,60 @@ div#feature-modal-body {
 
 div#legendContainer {
   display: block;
-  .column;
-  width: 150px;
+  margin: 10px auto;
+  .span-15;
   background-color: #fff;
   .rounded-corners;
-  margin: 10px;
   text-align: center;
 }
 div#legendContainer h3{
   margin-left: 40px;
+  padding-top: 10px;
+  margin-bottom: 10px;
   text-align: left;
 }
-span.legendSwatch {
-  width: 140px;
-  height: 25px;
+
+#legendSwatches {
+  width: 860px;
+  margin: 0 auto 10px auto;
+  padding-bottom: 10px;
+}
+
+@legendSwatchHeight: 25px;
+
+.legendTab {
+  height: @legendSwatchHeight;
   .column;
-  line-height: 25px;
+  line-height: @legendSwatchHeight;
   text-align: center;
   .rounded-corners;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 6px;
 }
+
+span.legendSwatch {
+  .span-2;
+  .legendTab;
+}
+span.legendDescBackground {
+  .span-12;
+  .legendTab;
+}
 span.legendLabel {
   .column;
 }
-/*span.legendDescription {
+p.legendDescription {
   .column;
-  width: 600px;
-  text-align: left;
-}*/
+  .span-12;
+}
+
+div#footer {
+  display: block;
+  .column;
+  min-height: @footerHeight;
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+}
