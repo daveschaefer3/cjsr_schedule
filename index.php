@@ -13,7 +13,9 @@
     <script src="javascripts/lib/respond.min.js"></script>
   <![endif]-->
   
-  <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/test_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" />
+  <!-- <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/test_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" /> -->
+  <!-- <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/cjsr_schedule/css/main.css?ts=<?=filemtime('css/main.css')?>" /> -->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
   <script type="text/javascript">less = { env: 'development' };</script>
 
 
