@@ -1,4 +1,5 @@
-/* Layout styles */
+/* Layout Styles */
+
 .column {
   float: left;
 }
@@ -63,7 +64,7 @@
   width: 1020px;
 }
 
-/* Start of Basic Mixins */
+/* Mixins */
 
 @border: 1px solid black;
 .border-top {
@@ -100,7 +101,7 @@
 /* End of Basic Mixins */
 
 /*
-  HEIGHT AND WEIGHT CALCULATIONS
+  Height and Width
 */
 
 @containerWidth: 960px;
@@ -110,6 +111,10 @@
 @showTimeBlockHeight: @timeBlockHeight + 1px;
 
 @footerHeight: 70px;
+
+/*
+  End of Height and Width
+*/
 
 /*
   Colours
@@ -166,17 +171,6 @@
   background-color: @open;
 }
 
-.schedShow {
-  padding-left: 2px;
-  padding-right: 2px;
-  display: table-cell;
-  vertical-align: middle;
-  line-height: 1em;
-}
-
-/*
-  END OF HEIGHT AND WEIGHT CALCULATIONS
-*/
 
 html {
   padding-top: 0;
@@ -309,7 +303,7 @@ div.timeBlock {
   .rounded-corners;
   cursor: default;
 }
-span.show-style {
+.show-style {
   position: absolute;
   line-height: 29px; 
   width: 118px;
@@ -318,14 +312,25 @@ span.show-style {
   text-align: center;
   cursor: pointer;
 }
-span.bbc {
+.schedShow {
+  padding-left: 2px;
+  padding-right: 2px;
+  line-height: 1em;
+  display: table;
+}
+.schedShowLabel {
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.bbc {
   position: absolute;
   line-height: 29px; 
   cursor: pointer; 
   width: 120px;
   z-index: 300;
 }
-span#bbcBanner {
+#bbcBanner {
   position: absolute;
   width: 598px;
   margin: 1px;
@@ -368,7 +373,6 @@ div.nextFeat {
   cursor: pointer;
 }
 .featureHead {
-
   padding-left: 60px;
 }
 div.feature {
@@ -379,10 +383,11 @@ div#feature-modal-body {
   display: block;
 }
 
+/* Legend */
 div#legendContainer {
   display: block;
   margin: 10px auto;
-  .span-15;
+  .span-16;
   background-color: #fff;
   .rounded-corners;
   text-align: center;
@@ -393,44 +398,43 @@ div#legendContainer h3{
   margin-bottom: 10px;
   text-align: left;
 }
-
+@legendSwatchHeight: 40px;
 #legendSwatches {
-  width: 860px;
+  width: 920px;
   margin: 0 auto 10px auto;
   padding-bottom: 10px;
   cursor: default;
 }
-
-@legendSwatchHeight: 25px;
-
 .legendTab {
   height: @legendSwatchHeight;
   .column;
-  line-height: @legendSwatchHeight;
+  line-height: 20px;;
   text-align: center;
   .rounded-corners;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 6px;
 }
-
-span.legendSwatch {
+.legendSwatch {
   .span-2;
   .legendTab;
+  display: table;
 }
-span.legendDescBackground {
-  .span-12;
+.legendSwatch p {
+  display: table-cell;
+  vertical-align: middle;
+}
+.legendDescBackground {
+  .span-13;
   .legendTab;
-}
-span.legendLabel {
-  .column;
 }
 p.legendDescription {
   .column;
-  .span-12;
+  .span-13;
+  line-height: 40px;
 }
-
-div#footer {
+/* Footer */
+#footer {
   display: block;
   .column;
   min-height: @footerHeight;

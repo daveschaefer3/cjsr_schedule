@@ -216,37 +216,21 @@ $(function(){
           };
         
         $('#' + show.day + '-' + show.daysId).height(showHeight);
+        $('#' + show.day + '-' + show.daysId).css('max-height', showHeight + 'px');
       };
     };
     $('#bbcBanner').height(58);
   }; // end of setShowHeights
 
-  // var autoSizeText = function(theClass) {
-  //   var el, elements, _i, _len, _results;
-  //   elements = $('.' + theClass);
-  //   //console.log(elements);
-  //   if (elements.length < 0) {
-  //     return;
-  //   }
-  //   _results = [];
-  //   for (_i = 0, _len = elements.length; _i < _len; _i++) {
-  //     el = elements[_i];
-  //     _results.push((function(el) {
-  //       var resizeText, _results1;
-  //       resizeText = function() {
-  //         var elNewFontSize;
-  //         elNewFontSize = (parseInt($(el).css('font-size').slice(0, -2)) - 1) + 'px';
-  //         return $(el).css('font-size', elNewFontSize);
-  //       };
-  //       _results1 = [];
-  //       while (el.scrollHeight > el.offsetHeight) {
-  //         _results1.push(resizeText());
-  //       }
-  //       return _results1;
-  //     })(el));
-  //   }
-  //   return _results;
-  // }; // end of autoSizeText
+  // adjustHeights function is from http://www.metaltoad.com/blog/resizing-text-fit-container
+  var adjustHeights = function(elem) {
+    var fontstep = 2;
+    if ($(elem).height()>$(elem).parent().height() || $(elem).width()>$(elem).parent().width()) {
+      $(elem).css('font-size',(($(elem).css('font-size').substr(0,2)-fontstep)) + 'px').css('line-height',(($(elem).css('font-size').substr(0,2))) + 'px');
+      adjustHeights(elem);
+    }
+  }
+
 
   var eventListeners = function() {
     // fill modal with the featured show.
@@ -364,6 +348,11 @@ $(function(){
   positionShowDivs();
   setShowHeights();
   // autoSizeText('schedShow');
+
+  // adjustHeight() take the element, not a string. Should write a loop
+  // to only pass in shows schedShows that have overflow.
+
+  // adjustHeights('schedShow');
 
   // template legend
   $('#scheduleBox').append(clearSource);
