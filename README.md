@@ -10,6 +10,11 @@ These string templates are styled using Less, a dynamic stylesheet language, and
 
 Click on any show to see more information about a show.
 
+Current TODOs:
+  - Reformat JSON data to use Date().toJSON() datetime format
+  - Rewrite day and length algorithms using the new datetime format
+  - Rewrite shows' height calculations to avoid inline styles (use class names instead)
+
 Future features will hopefully include:
   - a responsive design for mobile and widescreen browsers
   - a re-organization of the codebase using Angular or some other framework
