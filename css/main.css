@@ -1,4 +1,4 @@
-/* Layout styles */
+/* Layout Styles */
 .column {
   float: left;
 }
@@ -62,7 +62,7 @@
 .span-17 {
   width: 1020px;
 }
-/* Start of Basic Mixins */
+/* Mixins */
 .border-top {
   border-top: 1px solid #000000;
 }
@@ -88,7 +88,10 @@
 }
 /* End of Basic Mixins */
 /*
-  HEIGHT AND WEIGHT CALCULATIONS
+  Height and Width
+*/
+/*
+  End of Height and Width
 */
 /*
   Colours
@@ -131,16 +134,6 @@
 .open {
   background-color: #ffffff;
 }
-.schedShow {
-  padding-left: 2px;
-  padding-right: 2px;
-  display: table-cell;
-  vertical-align: middle;
-  line-height: 1em;
-}
-/*
-  END OF HEIGHT AND WEIGHT CALCULATIONS
-*/
 html {
   padding-top: 0;
   margin-top: 0;
@@ -295,7 +288,7 @@ div.timeBlock {
   border-radius: 2px;
   cursor: default;
 }
-span.show-style {
+.show-style {
   position: absolute;
   line-height: 29px;
   width: 118px;
@@ -308,14 +301,25 @@ span.show-style {
   text-align: center;
   cursor: pointer;
 }
-span.bbc {
+.schedShow {
+  padding-left: 2px;
+  padding-right: 2px;
+  line-height: 1em;
+  display: table;
+}
+.schedShowLabel {
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.bbc {
   position: absolute;
   line-height: 29px;
   cursor: pointer;
   width: 120px;
   z-index: 300;
 }
-span#bbcBanner {
+#bbcBanner {
   position: absolute;
   width: 598px;
   margin: 1px;
@@ -372,10 +376,11 @@ div.feature {
 div#feature-modal-body {
   display: block;
 }
+/* Legend */
 div#legendContainer {
   display: block;
   margin: 10px auto;
-  width: 900px;
+  width: 960px;
   background-color: #fff;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -391,15 +396,15 @@ div#legendContainer h3 {
   text-align: left;
 }
 #legendSwatches {
-  width: 860px;
+  width: 920px;
   margin: 0 auto 10px auto;
   padding-bottom: 10px;
   cursor: default;
 }
 .legendTab {
-  height: 25px;
+  height: 40px;
   float: left;
-  line-height: 25px;
+  line-height: 20px;
   text-align: center;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -410,11 +415,11 @@ div#legendContainer h3 {
   margin-right: 5px;
   margin-bottom: 6px;
 }
-span.legendSwatch {
+.legendSwatch {
   width: 120px;
-  height: 25px;
+  height: 40px;
   float: left;
-  line-height: 25px;
+  line-height: 20px;
   text-align: center;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -424,12 +429,17 @@ span.legendSwatch {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 6px;
+  display: table;
 }
-span.legendDescBackground {
-  width: 720px;
-  height: 25px;
+.legendSwatch p {
+  display: table-cell;
+  vertical-align: middle;
+}
+.legendDescBackground {
+  width: 780px;
+  height: 40px;
   float: left;
-  line-height: 25px;
+  line-height: 20px;
   text-align: center;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -439,15 +449,14 @@ span.legendDescBackground {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 6px;
-}
-span.legendLabel {
-  float: left;
 }
 p.legendDescription {
   float: left;
-  width: 720px;
+  width: 780px;
+  line-height: 40px;
 }
-div#footer {
+/* Footer */
+#footer {
   display: block;
   float: left;
   min-height: 70px;

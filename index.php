@@ -14,15 +14,15 @@
   <![endif]-->
   
   <!-- <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/cjsr_schedule/css/main.css?ts=<?=filemtime('css/main.css')?>" /> -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/main.css" /> -->
+  <!-- <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/test_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" /> -->
 
-  <link rel="stylesheet/less" type="text/css" href="http://notsubliminal.com/test_schedule/css/schedule.less?ts=<?=filemtime('css/schedule.less')?>" />
-  <script type="text/javascript">less = { env: 'development' };</script>
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <!-- <script type="text/javascript">less = { env: 'development' };</script> -->
 
   <script type="text/javascript" src="javascripts/lib/jquery-1.10.2.min.js?ts=<?=filemtime('javascripts/lib/jquery-1.10.2.min.js')?>"></script>
   <script type="text/javascript" src="javascripts/lib/handlebars-1.0.0.js?ts=<?=filemtime('javascripts/lib/handlebars-1.0.0.js')?>"></script>
   <script type="text/javascript" src="javascripts/lib/json2.js?ts=<?=filemtime('javascripts/lib/json2.js')?>"></script>
-  <script type="text/javascript" src="javascripts/lib/less-1.4.1.min.js?ts=<?=filemtime('javascripts/lib/less-1.4.1.min.js')?>"></script>
+  <!-- <script type="text/javascript" src="javascripts/lib/less-1.4.1.min.js?ts=<?=filemtime('javascripts/lib/less-1.4.1.min.js')?>"></script> -->
   
   <script type="text/javascript">
     // custom Handlebars template helpers
